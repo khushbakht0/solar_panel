@@ -115,7 +115,7 @@ void getappliancedetails(int numappliances, string appliancenames[], int applian
 }
 void getprofiledetails() {
     cout << "\n🎉 welcome to the solar panel profile generator! 🎉\n";
-    cout << "we're excited to help you find the perfect solar panel system for your home! 🌞 let's get started! 🚀\n";
+    cout << "we're excited to help you find the perfect solar panel system for your home!  let's get started! 🚀\n";
 
     string profilename;
     cout << "enter a profile name: ";

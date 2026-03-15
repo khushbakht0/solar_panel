@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solar Panel Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <h1>☀️ Solar Panel Calculator</h1>
+      <p>Find the perfect solar system for your home in Pakistan</p>
+      <button id="darkbtn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </div>
+
+    <div class="card">
+      <h2>Your Home Details</h2>
+      <div class="grid">
+        <div class="field">
+          <label>Profile Name</label>
+          <input type="text" id="name" placeholder="e.g. My Home" />
+        </div>
+        <div class="field">
+          <label>House Size</label>
+          <div class="row">
+            <input type="number" id="housesize" placeholder="5" />
+            <select id="unit">
+              <option>Marla</option>
+              <option>Kanal</option>
+              <option>Sqfeet</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Number of Rooms</label>
+          <input type="number" id="rooms" placeholder="4" />
+        </div>
+        <div class="field">
+          <label>Number of Appliances</label>
+          <input type="number" id="appcount" placeholder="3" oninput="generateAppliances()" />
+        </div>
+      </div>
+
+      <div id="appliances"></div>
+
+      <div class="field">
+        <label>Energy Coverage: <span id="pctlabel">70%</span></label>
+        <input type="range" min="10" max="100" value="70" step="1"
+          oninput="document.getElementById('pctlabel').textContent = this.value + '%'" id="coverage" />
+      </div>
+
+      <h2>Choose Panel Type</h2>
+      <div class="panels" id="panels">
+        <div class="panel selected" onclick="selectPanel(this, 0)">
+          <p class="pname">N-type Bifacial</p>
+          <p class="pspec">585W · 22.67%</p>
+          <p class="pprice">Rs. 18,135</p>
+        </div>
+        <div class="panel" onclick="selectPanel(this, 1)">
+          <p class="pname">A-Grade</p>
+          <p class="pspec">550W · 19.5%</p>
+          <p class="pprice">Rs. 13,570</p>
+        </div>
+        <div class="panel" onclick="selectPanel(this, 2)">
+          <p class="pname">Mono Facial</p>
+          <p class="pspec">560W · 21%</p>
+          <p class="pprice">Rs. 15,540</p>
+        </div>
+      </div>
+
+      <button onclick="calculate()">Calculate My Solar System ☀️</button>
+    </div>
+
+    <div class="card" id="results" style="display:none">
+      <h2>Your Results</h2>
+      <div class="results-grid">
+        <div class="stat"><p class="label">Panels Needed</p><p class="value" id="r-panels">-</p></div>
+        <div class="stat"><p class="label">Energy Covered</p><p class="value" id="r-energy">-</p></div>
+        <div class="stat"><p class="label">Total Cost</p><p class="value" id="r-cost">-</p></div>
+      </div>
+      <p id="r-summary" style="margin-top:1rem; color:#555; font-size:14px;"></p>
+      <p id="r-password" style="margin-top:8px; font-size:13px; color:#e8a020; font-weight:600;"></p>
+      <div id="r-breakdown" style="margin-top:1rem;"></div>
+    </div>
+
+    <div class="card">
+      <h2>💾 Saved Profiles</h2>
+      <div id="profile-list"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

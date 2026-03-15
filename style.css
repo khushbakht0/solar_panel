@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  padding: 2rem 1rem;
+  transition: all 0.3s;
+}
+
+.container {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 28px;
+  color: #e8a020;
+  margin-bottom: 6px;
+}
+
+.header p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 13px;
+  color: #666;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  transition: border 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #e8a020;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+.row input {
+  width: 80px;
+}
+
+.row select {
+  flex: 1;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #e8a020;
+}
+
+.appliance-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.appliance-row label {
+  font-size: 12px;
+  color: #999;
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.panel {
+  border: 1.5px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.panel:hover {
+  border-color: #e8a020;
+}
+
+.panel.selected {
+  border-color: #e8a020;
+  background: #fff8ec;
+}
+
+.pname {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.pspec {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+.pprice {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e8a020;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #e8a020;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #cf8e18;
+}
+
+#darkbtn {
+  width: auto;
+  padding: 8px 16px;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.label {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+.value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #e8a020;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #555;
+}
+
+.breakdown-row.total {
+  font-weight: 700;
+  color: #e8a020;
+  font-size: 15px;
+  border-bottom: none;
+}
+
+.profile-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.profile-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.profile-date {
+  font-size: 12px;
+  color: #999;
+}
+
+.profile-details {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.delete-btn {
+  width: auto;
+  padding: 6px 14px;
+  font-size: 12px;
+  background: #ff4d4d;
+  border-radius: 8px;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
+}
+
+body.dark {
+  background: #1a1a2e;
+  color: #eee;
+}
+
+body.dark .card {
+  background: #16213e;
+  box-shadow: none;
+}
+
+body.dark h2 {
+  color: #eee;
+}
+
+body.dark input,
+body.dark select {
+  background: #0f3460;
+  color: #eee;
+  border-color: #444;
+}
+
+body.dark .panel {
+  border-color: #444;
+}
+
+body.dark .panel.selected {
+  background: #2a1f00;
+}
+
+body.dark .stat {
+  background: #0f3460;
+}
+
+body.dark .profile-card {
+  border-color: #444;
+}
+
+body.dark .breakdown-row {
+  border-color: #333;
+  color: #ccc;
+}
+
+body.dark label {
+  color: #aaa;
+}
+
+body.dark .header p {
+  color: #aaa;
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .panels {
+    grid-template-columns: 1fr;
+  }
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
